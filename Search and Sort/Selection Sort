@@ -1,0 +1,17 @@
+# Selection Sort Technique
+# Space Compexity- O(1)
+# Time Complexity-
+# Time complexity
+# best case - O(n^2)
+# worst and avg case - O(n^2)
+
+def SelectionSort(arr):
+    for i in range(len(arr)):
+        po = i
+        for j in range(i, len(arr)):
+            if arr[j] < arr[po]:
+                po = j
+        arr[i], arr[po] = arr[po], arr[i]
+    return arr
+  
+print(SelectionSort([9,8,7,5,6,2,1,4,3]))
