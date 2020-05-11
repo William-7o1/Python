@@ -1,0 +1,42 @@
+# Quick Sort Technique
+# Space Compexity- O(log n)
+# Time Complexity-
+# best case - O(nLogn)
+# worst case -O(n^2)
+# avg case - O(nLogn)
+
+
+def partition(array, start, end):
+    pivot = array[start]
+    low = start + 1
+    high = end
+
+    while True:
+
+        while low <= high and array[high] >= pivot:
+            high = high - 1
+
+        while low <= high and array[low] <= pivot:
+            low = low + 1
+
+
+        if low <= high:
+            array[low], array[high] = array[high], array[low]
+        else:
+            break
+
+    array[start], array[high] = array[high], array[start]
+
+    return high
+
+
+def quick_sort(array, start, end):
+    if start >= end:
+        return
+
+    p = partition(array, start, end)
+    quick_sort(array, start, p-1)
+    quick_sort(array, p+1, end)
+    return array
+array = [9,8,7,4,5,6,3,2,1]
+print(quick_sort(array, 0, len(array) - 1))
