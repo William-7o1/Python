@@ -1,0 +1,23 @@
+
+# Insertion Sort Technique
+# Space Compexity- O(1)
+# Time Complexity-
+# Time complexity
+# best case - O(n)
+# worst and avg case - O(n^2)
+
+
+def insertion_sort(arr):
+    for i in range(1,len(arr)):
+        cur=arr[i]
+        pos=i
+
+        while pos>0 and arr[pos-1]>cur:
+            arr[pos]=arr[pos-1]
+            pos=pos-1
+
+        arr[pos]=cur
+
+    return arr
+
+print(insertion_sort([9,8,7,6,4,1,2,5,3]))
