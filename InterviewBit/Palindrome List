@@ -1,0 +1,29 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    # @param A : head node of linked list
+    # @return an integer
+    def lPalin(self, A):
+        a=[]
+        b=[]
+        cur=A
+        while cur:
+            a.append(cur.val)
+            cur=cur.next
+        
+        if (len(a)%2==0):
+            for i in range(len(a)//2):
+                b.append(a.pop())
+        else:
+            for i in range(len(a)//2):
+                b.append(a.pop())
+            a.pop()
+        if (a==b):
+            return 1
+        else:
+            return 0
+        
