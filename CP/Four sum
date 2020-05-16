@@ -1,0 +1,39 @@
+(BRUTE FORCE)
+
+a=int(input("Enter::::"))
+list=[]
+for num in range(1, a + 1):
+
+   if num > 1:
+       for i in range(2, num):
+           if (num % i) == 0:
+               break
+       else:
+           list.append(num)
+print(list)
+li=list
+lii=list
+liii=list
+f=0
+for i in list:
+    for j in liii:
+        for k in lii:
+            for l in li:
+                if(int(i+j+k+l)==a):
+                    l=[i,j,k,l]
+                    f=1
+                    break
+            if (f == 1):
+                break
+        if(f==1):
+            break
+    if (f == 1):
+        break
+if(f==1):
+    print(l)
+else:
+    print("NO")
+
+
+
+
