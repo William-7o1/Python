@@ -1,0 +1,14 @@
+import math                     #import math because it contains sqrt which helps lower the complexity
+a = int(input("Enter a Number::"))
+for i in range (2^23-1):        #range is specified in the question
+    if(a == 0):
+        break
+    else:
+        x = math.sqrt(a)     #sqrt of a number(a) is "x" , and (x * x)= a
+        x=x*x
+    if(x == a):
+        print("YES")            #if we get back the number the last bulb is on
+        break
+    else:
+        print("NO")             #if we dont get back the number after multiply it means last bulb is OFF
+        break   
