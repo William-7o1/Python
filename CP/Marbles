@@ -1,0 +1,54 @@
+n1=int(input("Enter N1::"))
+c1=int(input("Enter C1::"))
+n2=int(input("Enter N2::"))
+c2=int(input("Enter C2::"))
+w=int(input("Ënter Input::"))
+q=w
+ma=max(c1,c2)
+s=0
+i=0
+j=0
+t=0
+if(w==0):
+    exit(0)
+while(q> 0 ):
+    if(ma==c2 and t==0 ):
+        q=q-c2
+        i+=1
+        if(q%c1!=0):
+            break
+        elif(q%c1==0):
+            t=1
+            s = int(q / c1)
+    else:
+        break
+
+if(i>=1 and s>=1):
+    print (s,i)
+else:
+    print("Not possible")
+while(q>0):
+    if(ma==c1 and t==0):
+        q = q - c1
+        j += 1
+        if (q % c2 == 0):
+            break
+        elif (q % c2 == 0):
+            t = 1
+            s = int(q / c1)
+    else:
+        break
+exit(1)
+
+
+
+if(j>=1 and s>=1):
+    print (s,i)
+else:
+    print("Not possible")
+
+print(s, j)
+
+
+
+
