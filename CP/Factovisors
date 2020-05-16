@@ -1,0 +1,10 @@
+a=int(input("Enter 1st no fact::"))
+b=int(input("Enter 2nd no::"))
+m=1
+for i in range (1,a+1):
+    m=m*i
+    i=i+1
+
+print (m)
+if ( m%b ==0 ):
+    print( b , "divides" , a,"!")
