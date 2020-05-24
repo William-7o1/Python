@@ -1,0 +1,17 @@
+def reverse_words(arr):
+  emp=[]
+  string=""
+  for i in arr:
+      if i==" ":
+        emp.append(string)
+        emp.append(i)
+        string=""
+      elif i != " ":
+        string+=i
+  emp.append(string)
+  emp=emp[::-1]
+  final=[]   
+  for i in emp:
+      for j in i:
+          final.append(j)
+  return final
