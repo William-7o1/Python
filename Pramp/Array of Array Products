@@ -1,0 +1,14 @@
+def array_of_array_products(arr):
+  final=[]
+  s=1
+  if len(arr)==1:
+    return final
+  for i in range(len(arr)):
+    for j in range(len(arr)):
+      if i==j:
+        continue
+      else:
+        s *= arr[j]
+    final.append(s)
+    s=1
+  return final
