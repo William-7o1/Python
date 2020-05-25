@@ -1,0 +1,9 @@
+class Solution:
+    def generate(self, numRows: int) -> List[List[int]]:
+        if not numRows: return []
+        ret = [[1]]
+        numRows -= 1
+        while numRows:
+            ret.append([1] + [a+b for a,b in zip(ret[-1][:-1], ret[-1][1:])] +[1])
+            numRows-=1
+        return ret
