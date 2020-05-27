@@ -1,0 +1,17 @@
+class Solution:
+    def countAndSay(self, n: int) -> str:
+        result="1"
+        for i in range(n-1):
+            prev=result
+            result=""
+            j=0
+            while j<len(prev):
+                count=1
+                cur=prev[j]
+                j+=1
+                while j<len(prev) and prev[j]==cur:
+                    count+=1
+                    j+=1
+                result+=str(count)+str(cur)
+        return result
+
