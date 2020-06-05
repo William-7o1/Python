@@ -1,0 +1,11 @@
+def replace_x(string, c1, c2):
+    if len(string)==0:
+        return string
+    out=replace_x(string[1:],c1,c2)
+    if string[0]==c1:
+        return c2+out
+    else:
+        return string[0]+out
+
+s=input()
+print(replace_x(s,"x",""))
