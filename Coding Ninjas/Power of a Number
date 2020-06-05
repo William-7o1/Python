@@ -1,0 +1,16 @@
+## Read input as specified in the question.
+## Print output as specified in the question.
+l=[int(l) for l in input().split()]
+x=l[0]
+n=l[1]
+
+
+def pow(x,n):
+    if n==0:
+        return 1
+    # if n==1:
+    #     return x
+    else:
+        return (x*pow(x,(n-1)))
+    
+print(pow(x,n))
