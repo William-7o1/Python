@@ -1,0 +1,13 @@
+def replace(s):
+    if len(s) == 0 or len(s) == 1:
+        return s
+    if s[0] == s[1]:
+        out = replace(s[2:])
+        return replace(s[1] + out)
+
+    else:
+        out = replace(s[1:])
+        return s[0] + out
+
+
+print(replace(input()))
