@@ -1,0 +1,11 @@
+def zero(num):
+    if num == 0:
+        return 0
+
+    if num % 10 == 0:
+        return 1 + zero(num // 10)
+    else:
+        return zero(num // 10)
+
+num=int(input())
+print(zero(num))
