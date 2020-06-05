@@ -1,0 +1,8 @@
+def geo(k):
+    if k < 0:
+        return 0
+    else:
+        return 1 / (pow(2, k)) + geo(k - 1)
+    
+k=int(input())
+print("{:.5f}".format(geo(k)))
