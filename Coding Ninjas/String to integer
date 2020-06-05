@@ -1,0 +1,11 @@
+def stoi(string, num): 
+     
+    if len(string) == 1: 
+        return int(string) + (num * 10) 
+          
+     
+    num = int(string[0]) + (num * 10) 
+    
+    return stoi(string[1:], num) 
+
+print(stoi(input(),0))
