@@ -1,0 +1,25 @@
+import sys
+sys.setrecursionlimit(10**3) 
+def Step( n) : 
+    if n == 1 or n == 0: 
+        return 1
+    elif n == 2: 
+        return 2
+    
+    elif n==3:
+        return 4
+    
+    elif n==4:
+        return 7
+    
+    elif n==5:
+        return 13
+    elif n==6:
+        return 24
+    elif n==7:
+        return 44
+    
+    else : 
+        return Step(n - 3) + Step(n - 2) + Step(n - 1)
+        
+print(Step(int(input())))
