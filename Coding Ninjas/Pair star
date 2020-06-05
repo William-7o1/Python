@@ -1,0 +1,12 @@
+def star(s):
+    if len(s)<=1:
+        return s
+    
+    if s[0]==s[1]:
+        out=s[1:]
+        return s[0]+"*"+star(out)
+    else:
+        out=s[1:]
+        return s[0]+star(out)
+    
+print(star(input()))
