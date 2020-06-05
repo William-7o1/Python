@@ -1,0 +1,13 @@
+def firstIndex(arr, x, i):
+    if i==len(arr):
+        return -1
+    if arr[i]==x:
+        return i
+    else:
+        return firstIndex(arr, x, i+1)
+    
+    
+l=int(input())
+arr=[int(arr) for arr in input().split()]
+x=int(input())
+print(firstIndex(arr,x,0))
