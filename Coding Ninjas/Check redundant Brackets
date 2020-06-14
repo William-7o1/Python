@@ -1,0 +1,25 @@
+def checkRedundant(string):
+    s = []
+    for char in string:
+        if char !=')':
+            s.append(char)
+        if char == ')':
+            count = 0
+            while not s or s[-1] != '(':
+                s.pop()
+                count+=1
+            s.pop()
+            if count==0:
+                return True
+    return False
+            
+#### Implement Your Code Here
+    
+
+string = input()
+ans = checkRedundant(string)
+if ans is True:
+    print('true')
+else:
+    print('false')
+
