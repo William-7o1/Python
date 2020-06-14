@@ -1,0 +1,40 @@
+def tripletSum(arr, x):
+    arr.sort()
+    for i in range(0,len(arr)-1):
+        st=i+1
+        end=len(arr)-1
+        val=x-arr[i]
+        while st<end:
+            if(arr[st]+arr[end]>val):
+                end-=1
+            elif (arr[st]+arr[end]<val):
+                st+=1
+            else:
+                count1=0
+                count2=0
+                for ptr in range (st,end):
+                    if (arr[ptr]==arr[st]):
+                        count1+=1
+                    else:
+                        break
+                for ptr in range(end,st,-1):
+                    if(arr[ptr]==arr[end]):
+                        count2+=1
+                    else:
+                        break
+                comb=count1*count2
+                if(arr[st]==arr[end]):
+                    comb=((end-st+1)*(end-st))//2
+                for k in range(0,comb):
+                    print(arr[i],end=" ")
+                    print(arr[st],end=" ")
+                    print(arr[end])
+                st+=1
+                end=end-count2
+        
+
+# Main
+n=int(input())
+arr=list(int(i) for i in input().strip().split(' '))
+x=int(input())
+tripletSum(arr,x)
