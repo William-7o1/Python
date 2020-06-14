@@ -1,0 +1,43 @@
+def rec(n):
+  if n == 1:
+    return 1
+  else:
+    return n + rec(n-1)
+
+def pairSum(arr, k):
+    count = 0
+    if len(arr)<2:
+        return
+    arr.sort()
+    left=0
+    right = len(arr)-1
+    while left<right:
+        currentSum=arr[left]+arr[right]
+        if currentSum==k:
+            if arr[left]==arr[right]:
+              i = rec(arr.count(arr[left])-1)
+              for i in range(i):
+                count += 1
+                print(arr[left],arr[right])
+      
+              break
+            else:
+              for i in range(arr.count(arr[left])*arr.count(arr[right])):
+                
+                print(arr[left],arr[right])
+              left += arr.count(arr[left])
+              right -= arr.count(arr[right])
+        
+        
+        
+        elif currentSum<k:
+            left+=1
+        else:
+            right-=1
+    
+    
+# Main
+n=int(input())
+arr=list(int(i) for i in input().strip().split(' '))
+sum=int(input())
+pairSum(arr, sum)
