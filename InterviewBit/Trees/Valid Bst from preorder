@@ -1,0 +1,13 @@
+class Solution:
+    # @param A : list of integers
+    # @return an integer
+    def solve(self, A):
+        s=[]
+        root= -2**30
+        for val in A:
+            if val<root:
+                return 0
+            while s and s[-1]<val:
+                root=s.pop()
+            s.append(val)
+        return 1
