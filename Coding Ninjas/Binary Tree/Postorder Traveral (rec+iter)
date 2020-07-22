@@ -1,0 +1,33 @@
+def postorderRec(root):
+    #  left -> right-> root
+    if root is None :
+        return
+    postorderRec(root.left)
+    postorderRec(root.right)
+    print(root.data,end=" ")
+
+def postorderIter(root):
+    # using a stack 
+    # stack LIFO
+    if root is None:
+        return 
+    stack=[]
+    while True:
+        while root:
+            if root.right:
+                stack.append(root.right)
+            stack.append(root)
+            root=root.left
+        root=stack.pop()
+        if root.right and root.right == stack[-1]:
+            stack.pop()
+            stack.append(root)
+            root=root.right
+        else:
+            print(root.data)
+            # root=None
+            
+        if len(stack)<=0:
+            break  
+            
+            
