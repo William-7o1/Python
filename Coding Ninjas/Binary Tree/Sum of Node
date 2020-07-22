@@ -1,0 +1,16 @@
+def count(root):
+    count=0
+    if root is None:
+        print(count)
+        return
+    q=[root]
+    count+=1
+    while q:
+        cur=q.pop(0)
+        if cur.left:
+            count+=cur.left.data
+            q.append(cur.left)
+        if cur.right:
+            count+=cur.right.data
+            q.append(cur.right)
+    print(count)
