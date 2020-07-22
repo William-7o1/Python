@@ -1,0 +1,24 @@
+def inorderRec(root):
+    #  left -> root-> right
+    if root is None :
+        return
+    inorderRec(root.left)
+    print(root.data,end=" ")
+    inorderRec(root.right)
+
+def inorderIter(root):
+    # using a stack 
+    # stack LIFO
+    cur=root
+    stack=[]
+    while True:
+        if cur:
+            stack.append(cur)
+            cur=cur.left
+        elif stack:
+            cur=stack.pop()
+            print(cur.data,end=" ")
+            cur=cur.right
+        else:
+            break
+    return
