@@ -1,0 +1,9 @@
+def CountLeaf(root):
+    if root is None:
+        return 0
+    if root.left is None and root.right is None:
+        return 1
+    ls=CountLeaf(root.left)        
+    rs=CountLeaf(root.right)
+    return ls+rs
+    
