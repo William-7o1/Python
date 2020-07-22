@@ -1,0 +1,26 @@
+def heightRec(root):
+    if root is None:
+        return 0
+    lh=heightRec(root.left)
+    rh=heightRec(root.right)
+    h=1+max(lh,rh)
+    return h
+    
+def heightIT(root):
+    h=0
+    if root is None:
+        return h
+    q=[root]    
+    while True:
+        length=len(q)
+        if length==0:
+            return h
+        h+=1    
+        while length>0:
+            node=q.pop(0)
+            if node.left:
+                q.append(node.left)
+            if node.right:
+                q.append(node.right)
+            length-=1
+    return h    
