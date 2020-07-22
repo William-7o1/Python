@@ -1,0 +1,29 @@
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.left=None
+        self.right=None
+        
+def create(arr):
+    index=0
+    q=[]
+    if len(arr)<=0 or arr[0]==-1:
+        return None
+    root=Node(arr[index])
+    index+=1
+    q.append(root)
+    while q:
+        cur=q.pop(0)
+        leftchild=arr[index]
+        index+=1
+        if leftchild != -1:
+            leftnode=Node(leftchild)
+            cur.left=leftnode
+            q.append(leftnode)
+        rightchild=arr[index]
+        index+=1
+        if rightchild != -1:
+            rightnode= Node(rightchild)
+            cur.right=rightnode
+            q.append(rightnode)
+    return root
