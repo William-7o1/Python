@@ -1,0 +1,11 @@
+def lvl(root):
+    if root is None:
+        return
+    q=[root]
+    while q:
+        cur=q.pop(0)
+        print(cur.data,end=" ")
+        if cur.left:
+            q.append(cur.left)
+        if cur.right:
+            q.append(cur.right)
