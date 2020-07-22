@@ -1,0 +1,24 @@
+def preorderRec(root):
+    # root-> left -> right
+    
+    if root is None :
+        return
+    print(root.data,end=" ")
+    preorderRec(root.left)
+    preorderRec(root.right)
+
+def preorderIter(root):
+    # using a stack 
+    # store right and then left
+    # stack LIFO
+    
+    if root is None:
+        return
+    stack=[root]
+    while stack:
+        cur=stack.pop()
+        print(cur.data,end=" ")
+        if cur.right:
+            stack.append(cur.right)
+        if cur.left:
+            stack.append(cur.left)
