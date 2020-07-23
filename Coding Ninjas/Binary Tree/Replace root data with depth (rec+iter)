@@ -1,0 +1,28 @@
+def replacelvl(root):
+    if root is None:
+        return None 
+    q=[root]
+    lvl=0
+    while True:
+        length=len(q)
+        if length==0:
+            return root
+        lvl+=1    
+        while length>0:
+            node=q.pop(0)
+            node.data=lvl
+            if node.left:
+                q.append(node.left)
+            if node.right:
+                q.append(node.right)
+            length-=1
+    return root
+        
+            
+def replace(root,lvl):
+    if root is None:
+        return
+    root.data=lvl
+    replace(root.left,lvl+1)
+    replace(root.right,lvl+1)
+    return root
