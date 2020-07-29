@@ -1,0 +1,50 @@
+def Serial(arr):
+    if arr[0]==-1 or len(arr)==0:
+        return None
+    i=0
+    root=Node(arr[i])
+    i+=1
+    q=[root]
+    while q:
+        cur=q.pop(0)
+        leftChild=arr[i]
+        i+=1
+        if leftChild != -1:
+            leftnode=Node(leftChild)
+            q.append(leftnode)
+            cur.left=leftnode
+        rightChild=arr[i]
+        i+=1
+        if rightChild != -1:
+            rightnode=Node(rightChild)
+            q.append(rightnode)
+            cur.right=rightnode
+    return root
+    
+
+def Deserial(root):
+    final=[]
+    if root is None:
+        return final
+    q=[root]
+    while q:
+        cur=q.pop(0)
+        if cur=='None':
+            print('None')
+        elif cur.data != 'None':
+            print(cur.data)
+            if cur.left:
+                q.append(cur.left)
+            else:
+                q.append('None')
+            if cur.right:
+                q.append(cur.right)
+            else:
+                q.append('None')
+         
+    
+        
+arr=[int(i) for i in input().split()]
+root=Serial(arr)
+Deserial(root)
+    
