@@ -1,0 +1,40 @@
+class graph:
+    def __init__(self, n):
+        self.n = n
+        self.adxMatrix = [[0 for i in range(self.n)] for j in range(self.n)]
+
+    def add(self, v1, v2):
+        self.adxMatrix[v1][v2] = 1
+        self.adxMatrix[v2][v1] = 1
+    
+    def remove(self, v1, v2):
+        if self.check is True:
+            return
+        self.adxMatrix[v1][v2] = 0
+        self.adxMatrix[v2][v1] = 0
+    
+    def check(self, v1, v2):
+        if self.adxMatrix[v1][v2] == 1:
+            return True
+        
+    def __str__(self):
+        return str(self.adxMatrix)
+        
+    def dfsHelper(self, sv, visited):
+        print(sv)
+        visited[sv]=True
+        for i in range(self.n):
+            if self.adxMatrix[sv][i] == 1 and visited[i] is False:
+                self.dfsHelper(i, visited)
+                
+    def dfs(self):
+        visited = [False for i in range(self.n)]
+        self.dfsHelper(0, visited)
+
+g = graph(6)
+g.add(1,0)
+g.add(1,3)
+g.add(0,2)
+g.add(2,3)
+g.add(2,4)
+g.dfs()
