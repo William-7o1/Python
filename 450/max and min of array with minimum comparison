@@ -1,0 +1,25 @@
+TournamentMethod ( Divide and Conquer )
+def arrMinMax(arr, start, end):
+    arr_max = arr[start]
+    arr_min = arr[start]
+    if start==end:
+        arr_max = arr[start]
+        arr_min = arr[start]
+        return arr_max, arr_min
+    elif start==end-1:
+        if arr[start]<arr[end]:
+            arr_max = arr[end]
+            arr_min = arr[start]
+        else:
+            arr_max = arr[start]
+            arr_min = arr[end]
+        return arr_max, arr_min
+    else:
+        mid=int((start+end)//2)
+        arr1max, arr1min = arrMinMax(arr,start , mid)  
+        arr2max, arr2min  = arrMinMax(arr, mid+1, end)  
+    
+    return (max(arr1max,arr2max), min(arr1min,arr2min))
+   
+arr=[99,55,22,11,4,1033,3,5,2,1]
+print(arrMinMax(arr,0,len(arr)-1))
